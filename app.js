@@ -30,57 +30,23 @@ const Book = mongoose.model('Book', bookSchema)
 app.use(bodyParser.json())
 
 app.post('/books', (req, res, next) => {
-
-  const b = new Book({title: req.body.title, author: req.body.author})
-
-  b.save()
-  .then((result) => 
-    res.send(result)
-  )
-  .catch(err => {
-    res.status(500).send(err)
-  })
-
+  // TODO: add create code here 
 })
 
 app.get('/books', (req, res, next) => {
-  Book.find()
-  .then((result) => 
-    res.send(result)
-  )
-  .catch(err => {
-    res.status(500).send(err)
-  })
+  // TODO: add get all code here 
 })
 
 app.get('/books/:id', (req, res, next) => {
-  Book.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } } )
-  .then((result) => 
-    res.send(result)
-  )
-  .catch(err => {
-    res.status(500).send(err)
-  })
+  // TODO: add get ont code here 
 })
 
 app.delete('/books/:id', (req, res, next) => {
-  Book.deleteOne({ _id: req.params.id })
-  .then((result) => 
-    res.send(result)
-  )
-  .catch(err => {
-    res.status(500).send(err)
-  })
+  // TODO: add delete one code here 
 })
 
 app.patch('/books/:id', (req, res, next) => {
-  Book.updateOne({_id:req.params.id},{title:req.body.title, author:req.body.author })
-  .then((result) => 
-    res.send(result)
-  )
-  .catch(err => {
-    res.status(500).send(err)
-  })
+  // TODO: add update one code here 
 })
 
 
